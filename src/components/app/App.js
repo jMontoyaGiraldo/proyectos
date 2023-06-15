@@ -4,6 +4,7 @@ import Nave from "../Nav/Nav";
 // import characters from '../../data.js';
 import { useState } from "react";
 import axios from "axios";
+import {Route} from 'react-router-dom'
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -32,10 +33,6 @@ function App() {
 
   return (
     <div className="App">
-      <link
-        rel="stylesheet"
-        href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-      ></link>
       <Nave onSearch={onSearch} />
       <Cards onClose={onClose} characters={characters} />
     </div>
