@@ -1,0 +1,12 @@
+.lalo{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    background-color: #a9a9a9;
+    background-size: 100px 100% ;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid blanchedalmond;
+    width: 100%;
+    align-items: end;
+}

@@ -1,0 +1,133 @@
+    * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+   
+  }
+  
+  .divM {
+    margin: 10px;
+    perspective: 700px;
+    transform: rotateX(180deg);
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .divM:hover {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .divM:hover .adelante {
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+  }
+  
+  .divM:hover .adelante h2 {
+    color: rgb(194, 150, 123);
+  }
+  
+  .divM:hover .contenedorA {
+    transform: rotatex(150deg);
+    transition: 1s;
+  }
+  
+  .Targeta {
+    width: 500px;
+    height: 300px;
+    background-color: bisque;
+    margin: 10px;
+    transform-style: preserve-3d;
+    color: rgb(39, 39, 39);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-template-columns: repeat(auto-fill, minmax(15re, 1fr));
+  
+  }
+  
+  .adelante, .atras {
+    position: fixed;
+    border-radius: 10px;
+  }
+  
+  .adelante {
+    height: 97%;
+    z-index: 1;
+    background-image: url(https://color-hex.org/colors/c2967b.png);
+    border-radius: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .atras {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border-color: rgb(194, 150, 123);
+    transform: rotateX(180deg);
+    align-items: center;
+    align-content: center;
+  }
+  
+  .imagen {
+    width: 90%;
+    border: 8px solid rgb(124, 96, 79);
+  }
+  
+  button {
+    background: rgba(212, 212, 212, 0.8);
+    border: none;
+    border-radius: 10px;
+    width: min-content;
+    font-family: cursive;
+    align-self: flex-end;
+  }
+  
+  button:hover {
+    cursor: pointer;
+    background-color: red;
+    opacity: 0.5;
+  }
+  
+  .archivoB {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  
+  .archivoA {
+    margin: 0;
+    border-radius: 10px;
+  }
+  
+  .adelante h2 {
+    position: absolute;
+    transform: rotateX(180deg);
+    margin-left: 60px;
+  }
+  
+  .ir {
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-template-columns: repeat(auto-fill, minmax(15re, 1fr));
+    @media (max-width: 575px) { transform: scale(0.85); }
+  }
+  
+  .ir h3 {
+    background-color: rgb(255, 228, 196);
+    width: max-content;
+    position: relative;
+    left: 3.8%;
+    top: 134%;
+    z-index: 1;
+    border-radius: 5px;
+    padding: 0;
+
+  }
