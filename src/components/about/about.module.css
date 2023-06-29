@@ -1,0 +1,21 @@
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: hsl(52, 38%, 45%, 0.5);
+    margin-inline: 10%;
+}
+
+.contenedor img{
+    height: 10%;
+    width: 10%;
+}
+
+.texto{
+    height: 50%;
+    width: 50%;;
+}
+.texto p {
+    display: flex;
+    flex-direction: column;
+}

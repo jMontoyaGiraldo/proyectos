@@ -15,16 +15,18 @@ export default function SearchBar(props) {
    }
    const sender = event =>{
       event.preventDefault();
-      props.onSearch(input);
       setInput('');
    }
    return (
       <div className= {estilos.contenedor}>
-         <form action="post" method="post" onSubmit={sender} onChange={event => setInput(event.target.value)}>
-         <input type='search'  value={input} />
+         <form action="post" className={estilos.form} method="post" onSubmit={sender} onChange={event => event.target.tagName.toLowerCase() === 'input' && setInput(event.target.value)}>
+         <input type='search'  value={input} onChange={handleChange}/>
          <button onClick={()=>  props.onSearch(id)}>
-         <FontAwesomeIcon icon={faGlasses} />
+          <FontAwesomeIcon icon={faGlasses} /> 
          </button>
+         <button onClick={props.random}>
+        Random
+      </button>
          </form>
       </div>
    );

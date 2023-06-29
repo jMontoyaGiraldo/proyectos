@@ -1,12 +1,31 @@
-import SearchBar from './SearchBar/SearchBar';
-import estilos from  './Nav.module.css'
+import SearchBar from "../SearchBar/SearchBar";
+import estilos from "./Nav.module.css";
+import { Link, useLocation } from "react-router-dom";
+import imagen from "../rick-and-morty/cabezaMorty.png";
 
-const Nave =function(props){
-    return(
-        <div className={estilos.lalo}>
-            <SearchBar onSearch={props.onSearch} />
-        </div>
-    )
-}
+const Nave = function (props) {
+  const location = useLocation();
+  const shouldRenderNav = location.pathname !== "/";
 
-export default Nave
+  return shouldRenderNav ? (
+    <div className={estilos.lalo}>
+      <div className={estilos.lila}>
+        <img src={imagen} alt="detective morty" />
+        <Link to="/home" className={estilos.links}>
+          <button>Home</button>
+        </Link>
+        <Link to="/about" className={estilos.links}>
+          <button>About</button>
+        </Link>
+        <Link to="/favorites" className={estilos.links}>
+        <button>Favorites</button>
+      </Link>
+      </div>
+      <div className={estilos.SearchBar}>
+        <SearchBar onSearch={props.onSearch} random={props.random} />
+      </div>
+    </div>
+  ) : null;
+};
+
+export default Nave;

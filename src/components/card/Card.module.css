@@ -80,10 +80,10 @@
   }
   
   button {
-    background: rgba(212, 212, 212, 0.8);
+    background: rgba(250, 0, 0, 0.8);
     border: none;
     border-radius: 10px;
-    width: min-content;
+    width: max-content;
     font-family: cursive;
     align-self: flex-end;
   }
@@ -130,4 +130,8 @@
     border-radius: 5px;
     padding: 0;
 
+  }
+
+  .botones button {
+    background-color: none;
   }
