@@ -15,6 +15,7 @@ import {
 import React from "react";
 import Form from "../Form/form";
 import Favorites from "../Fav/Favorites.jsx";
+import axios from 'axios'
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -26,15 +27,19 @@ function App() {
   const navigate = useNavigate();
 
   function login(userData) {
-    if (userData.password === PASSWORD && userData.email === EMAIL) {
-      setAccess(true);
-      navigate("/home");
-    }
-  }
+    const { email, password } = userData;
+    const URL = 'http://localhost:3001/rickandmorty/login/';
+    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+       const { access } = data;
+       setAccess(data);
+       access && navigate('/home');
+    });
+ }
 
   useEffect(() => {
     !access && navigate("/");
   }, [access]);
+
 
   function onSearch(id) {
     fetch(`http://localhost:3001/rickandmorty/character/${id}`)

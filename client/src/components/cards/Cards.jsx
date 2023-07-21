@@ -14,7 +14,7 @@ function Cards(props) {
   };
 
   const handleRemove = (id) => {
-    props.removeFav(id);
+    removeFav(id);
   };
 
   const { characters, onClose } = props;

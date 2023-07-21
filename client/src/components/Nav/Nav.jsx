@@ -10,9 +10,8 @@ const Nave = function (props) {
   return shouldRenderNav ? (
     <div className={estilos.lalo}>
       <div className={estilos.lila}>
-        <img src={imagen} alt="detective morty" />
         <Link to="/home" className={estilos.links}>
-          <button>Home</button>
+        <img src={imagen} alt="detective morty" />
         </Link>
         <Link to="/about" className={estilos.links}>
           <button>About</button>
