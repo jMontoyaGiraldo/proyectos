@@ -8,7 +8,7 @@ function login (req , res){
     if(miembro){
        return res.status(200).json({access:true})
     }else{
-       return res.status(200).json({access:false})
+      return res.status(403).json({access:false, message:'Usuario o contraseña incorrecta'})
     }
 
 }

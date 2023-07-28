@@ -15,28 +15,35 @@ export const ORDER = 'ORDER'
 const URL = 'http://localhost:3001/rickandmorty/fav'
 
 export const addFav = (character) => {
-   return function(dispatch){
-       axios.post(`${URL}`, character)
-       .then(({data})=>{
-           return dispatch({
-               type:ADD_FAV,
-               payload:data
-           })
-       })
-   }
+    return async function(dispatch){
+      try {
+        const { data } = await axios.post(`${URL}`, character)
+        return dispatch({
+            type:ADD_FAV,
+            payload: data
+        })
+      } catch (error) {
+        console.log(error);
+      }
+       
+    }
 }
 
 export const removeFav = (id) => {
-   return (dispatch) => {
-       axios.delete(`${URL}/${id}`)
-       .then(({data})=>{
-           return dispatch({
-               type:REMOVE_FAV,
-               payload: data
-           })
-       })
-   }
-};
+    return async(dispatch) => {
+        try {
+            const { data } = await axios.delete(`${URL}/${id}`)
+
+        return dispatch({
+            type:REMOVE_FAV,
+            payload:data
+        })
+        } catch (error) {
+            console.log(error);
+        }
+       
+    }
+}
 
 export const filterCards= (gender) => {
   return { type: FILTER, payload: gender}

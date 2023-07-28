@@ -7,7 +7,7 @@ function postFav(req , res){
 }
 
 function deleteFav(req , res){
-    myFavorites= myFavorites.filter(eleme => eleme.id !== Number(req.params.id) )
+    myFavorites= myFavorites.filter(eleme => eleme.id != req.params.id )
     return res.status(200).json(myFavorites)
 }
 
