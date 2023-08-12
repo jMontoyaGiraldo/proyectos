@@ -2,12 +2,14 @@ const {User} = require('../DB_connection')
 
 const postUser = async(req , res)=> {
     try {
-      const {email , password} = req.body;
+      const email = req.body.email
+      const password = req.body.password
+      // const { email , password } = req.body;
       if(!password) return res.status(400).json({ error: 'Falta password' });
       if(!email) return res.status(400).json({ error: 'Falta email' });
       
       const[createdUser , created] = await User.findOrCreate({
-        where:{email},default:{password,}});
+        where:{email},defaults:{password,}});
 
       if(created){
         if (created) {
