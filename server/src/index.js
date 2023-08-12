@@ -8,7 +8,7 @@
 
 //   if(url.includes("/rickandmorty/character")){
 //     let id = url.split('/').at(-1)
-//     return getCharById(res,id) 
+//     return getCharById(res,id)
 //   }
 //   res.writeHead(404, { 'Content-Type': 'text/plain' });
 //   res.end('Route nor found');
@@ -16,10 +16,13 @@
 // .listen(3001, 'localhost');
 //////////////////////////////////////////////////////////////////////////////////////77
 
+const { conn } = require('./DB_connection')
 const server = require('./app')
+require('dotenv').config()
 
-const PORT = 3001;
+const {PORT} = process.env;
 
-server.listen(PORT,()=>{
+server.listen(PORT, async ()=>{
+  await conn.sync({force:true})
   console.log(`Server is listening on port: ${PORT}`);
 })

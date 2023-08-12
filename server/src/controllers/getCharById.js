@@ -1,5 +1,4 @@
 const axios = require("axios");
-const errorHandler= require('../utils/erros')
 const URL = "https://rickandmortyapi.com/api/character/"
 // const express = require('../index')
 // const Route = express.Router()
@@ -18,7 +17,7 @@ const getCharById = async (req, res)=>{
 
     return  res.status(200).json(character)
   } catch (error) {
-    errorHandler(res , error)
+    return res.status(500).json({ error: error.message });
   }
 
 
